@@ -32,6 +32,16 @@ class PipeSpecs: QuickSpec {
                 }
             }
 
+            describe("map then filter") {
+                it("should have only two odd numbers") {
+                    let result = numbers
+                        |> map { $0 * 7 } // [28, 56, 105, 112, 161, 294]
+                        |> filter { $0 % 2 != 0 }
+
+                    expect(result).to(equal([105, 161]))
+                }
+            }
+
             describe("reduce") {
                 it("should sum") {
                     let result = numbers
