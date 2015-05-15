@@ -10,8 +10,8 @@ infix operator |> { precedence 50 associativity left }
 Pipe. e.g. x |> f is transformed into f(x). But it's chainable
 so that x |> f |> g |> h is transformed into h(g(f(x)))
 */
-public func |> <Input, Output>(left: Input, right: Input -> Output) -> Output {
-    return right(left)
+public func |> <Input, Output>(lhs: Input, rhs: Input -> Output) -> Output {
+    return rhs(lhs)
 }
 
 /// Curried version of map
