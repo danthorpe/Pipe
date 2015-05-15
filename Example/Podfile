@@ -1,0 +1,17 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+inhibit_all_warnings!
+use_frameworks!
+
+platform :ios, "8.0"
+
+target 'Pipe Dream' do
+  pod "Pipe", :path => "../"
+end
+
+target 'Pipe DreamTests' do
+  pod "Pipe", :path => "../"
+  pod 'Quick'
+  pod 'Nimble'        
+end
+
