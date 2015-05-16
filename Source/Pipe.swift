@@ -4,6 +4,8 @@
 //  Created by Daniel Thorpe on 11/05/2015.
 //
 
+import Foundation
+
 infix operator |> { precedence 50 associativity left }
 
 /**
@@ -74,7 +76,6 @@ public func sum<S: SequenceType where S.Generator.Element == UInt64>(source: S) 
 public func sum<S: SequenceType where S.Generator.Element == Int64>(source: S)   -> S.Generator.Element { return reduce(source, 0, +) }
 public func sum<S: SequenceType where S.Generator.Element == UInt>(source: S)    -> S.Generator.Element { return reduce(source, 0, +) }
 public func sum<S: SequenceType where S.Generator.Element == Int>(source: S)     -> S.Generator.Element { return reduce(source, 0, +) }
-public func sum<S: SequenceType where S.Generator.Element == Float80>(source: S) -> S.Generator.Element { return reduce(source, 0, +) }
 public func sum<S: SequenceType where S.Generator.Element == Double>(source: S)  -> S.Generator.Element { return reduce(source, 0, +) }
 public func sum<S: SequenceType where S.Generator.Element == Float>(source: S)   -> S.Generator.Element { return reduce(source, 0, +) }
 public func sum<S: SequenceType where S.Generator.Element == CGFloat>(source: S) -> S.Generator.Element { return reduce(source, 0, +) }
