@@ -5,6 +5,6 @@ echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc
 bundle install
 pushd "Example"
 pod install
-xctool -workspace Pipe\ Dream.xcworkspace -scheme Pipe\ Dream -sdk iphonesimulator build test
+xcodebuild -workspace Pipe\ Dream.xcworkspace -scheme Pipe\ Dream -sdk iphonesimulator build test
 
 
