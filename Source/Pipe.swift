@@ -18,27 +18,27 @@ public func |> <Input, Output>(lhs: Input, rhs: Input -> Output) -> Output {
 
 /// Curried version of map
 public func map<S: SequenceType, T>(transform: (S.Generator.Element) -> T)(source: S) -> [T] {
-    return map(source, transform)
+    return source.map(transform)
 }
 
 /// Curried version of filter
 public func filter<S: SequenceType>(includeElement: (S.Generator.Element) -> Bool)(source: S) -> [S.Generator.Element] {
-    return filter(source, includeElement)
+    return source.filter(includeElement)
 }
 
 /// Curried version of reduce
 public func reduce<S: SequenceType, U>(initial: U, combine: (U, S.Generator.Element) -> U)(source: S) -> U {
-    return reduce(source, initial, combine)
+    return source.reduce(initial, combine: combine)
 }
 
 /// Curried version of sorted
 public func sorted<S: SequenceType>(isOrderedBefore: (S.Generator.Element, S.Generator.Element) -> Bool)(source: S) -> [S.Generator.Element] {
-    return sorted(source, isOrderedBefore)
+    return source.sort(isOrderedBefore)
 }
 
 /// Curried version of find
 public func find<C: CollectionType where C.Generator.Element: Equatable>(value: C.Generator.Element) -> (C) -> C.Index? {
-    return { find($0, value) }
+    return { $0.indexOf(value) }
 }
 
 /// Curried version Array.append
@@ -66,16 +66,16 @@ public func removeAtIndex<T>(index: Int) -> [T] -> [T] {
 }
 
 /// Curried version of sum
-public func sum<S: SequenceType where S.Generator.Element == UInt8>(source: S)   -> S.Generator.Element { return reduce(source, 0, +) }
-public func sum<S: SequenceType where S.Generator.Element == Int8>(source: S)    -> S.Generator.Element { return reduce(source, 0, +) }
-public func sum<S: SequenceType where S.Generator.Element == UInt16>(source: S)  -> S.Generator.Element { return reduce(source, 0, +) }
-public func sum<S: SequenceType where S.Generator.Element == Int16>(source: S)   -> S.Generator.Element { return reduce(source, 0, +) }
-public func sum<S: SequenceType where S.Generator.Element == UInt32>(source: S)  -> S.Generator.Element { return reduce(source, 0, +) }
-public func sum<S: SequenceType where S.Generator.Element == Int32>(source: S)   -> S.Generator.Element { return reduce(source, 0, +) }
-public func sum<S: SequenceType where S.Generator.Element == UInt64>(source: S)  -> S.Generator.Element { return reduce(source, 0, +) }
-public func sum<S: SequenceType where S.Generator.Element == Int64>(source: S)   -> S.Generator.Element { return reduce(source, 0, +) }
-public func sum<S: SequenceType where S.Generator.Element == UInt>(source: S)    -> S.Generator.Element { return reduce(source, 0, +) }
-public func sum<S: SequenceType where S.Generator.Element == Int>(source: S)     -> S.Generator.Element { return reduce(source, 0, +) }
-public func sum<S: SequenceType where S.Generator.Element == Double>(source: S)  -> S.Generator.Element { return reduce(source, 0, +) }
-public func sum<S: SequenceType where S.Generator.Element == Float>(source: S)   -> S.Generator.Element { return reduce(source, 0, +) }
-public func sum<S: SequenceType where S.Generator.Element == CGFloat>(source: S) -> S.Generator.Element { return reduce(source, 0, +) }
+public func sum<S: SequenceType where S.Generator.Element == UInt8>(source: S)   -> S.Generator.Element { return source.reduce(0, combine: +) }
+public func sum<S: SequenceType where S.Generator.Element == Int8>(source: S)    -> S.Generator.Element { return source.reduce(0, combine: +) }
+public func sum<S: SequenceType where S.Generator.Element == UInt16>(source: S)  -> S.Generator.Element { return source.reduce(0, combine: +) }
+public func sum<S: SequenceType where S.Generator.Element == Int16>(source: S)   -> S.Generator.Element { return source.reduce(0, combine: +) }
+public func sum<S: SequenceType where S.Generator.Element == UInt32>(source: S)  -> S.Generator.Element { return source.reduce(0, combine: +) }
+public func sum<S: SequenceType where S.Generator.Element == Int32>(source: S)   -> S.Generator.Element { return source.reduce(0, combine: +) }
+public func sum<S: SequenceType where S.Generator.Element == UInt64>(source: S)  -> S.Generator.Element { return source.reduce(0, combine: +) }
+public func sum<S: SequenceType where S.Generator.Element == Int64>(source: S)   -> S.Generator.Element { return source.reduce(0, combine: +) }
+public func sum<S: SequenceType where S.Generator.Element == UInt>(source: S)    -> S.Generator.Element { return source.reduce(0, combine: +) }
+public func sum<S: SequenceType where S.Generator.Element == Int>(source: S)     -> S.Generator.Element { return source.reduce(0, combine: +) }
+public func sum<S: SequenceType where S.Generator.Element == Double>(source: S)  -> S.Generator.Element { return source.reduce(0, combine: +) }
+public func sum<S: SequenceType where S.Generator.Element == Float>(source: S)   -> S.Generator.Element { return source.reduce(0, combine: +) }
+public func sum<S: SequenceType where S.Generator.Element == CGFloat>(source: S) -> S.Generator.Element { return source.reduce(0, combine: +) }

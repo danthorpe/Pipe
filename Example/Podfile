@@ -11,7 +11,5 @@ end
 
 target 'Pipe DreamTests' do
   pod "Pipe", :path => "../"
-  pod 'Quick'
-  pod 'Nimble'        
 end
 

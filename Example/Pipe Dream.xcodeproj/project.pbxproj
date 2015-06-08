@@ -12,7 +12,7 @@
 		653F236F1B0682D4002774F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653F236D1B0682D4002774F1 /* Main.storyboard */; };
 		653F23711B0682D4002774F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653F23701B0682D4002774F1 /* Images.xcassets */; };
 		653F23741B0682D4002774F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 653F23721B0682D4002774F1 /* LaunchScreen.xib */; };
-		653F238B1B0683AF002774F1 /* PipeSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653F238A1B0683AF002774F1 /* PipeSpecs.swift */; };
+		656ADE9C1B263E20004CCE3A /* PipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656ADE9B1B263E20004CCE3A /* PipeTests.swift */; };
 		713373E0EF0BE560DE9FFD4E /* Pods_Pipe_DreamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19BC8C0A67FA225690E5C2B /* Pods_Pipe_DreamTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C556B87839AF1F7D4916EDEF /* Pods_Pipe_Dream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D45DD476E02D029D67ACD47 /* Pods_Pipe_Dream.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -41,6 +41,7 @@
 		653F237E1B0682D4002774F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		653F23891B0683AE002774F1 /* Pipe DreamTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pipe DreamTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		653F238A1B0683AF002774F1 /* PipeSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PipeSpecs.swift; sourceTree = "<group>"; };
+		656ADE9B1B263E20004CCE3A /* PipeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PipeTests.swift; sourceTree = "<group>"; };
 		7AD2EF3DC2D701D544A230A7 /* Pods-Pipe Dream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pipe Dream.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pipe Dream/Pods-Pipe Dream.debug.xcconfig"; sourceTree = "<group>"; };
 		7D45DD476E02D029D67ACD47 /* Pods_Pipe_Dream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pipe_Dream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63D0DDA24B0817A0B05F138 /* Pods-Pipe Dream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pipe Dream.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pipe Dream/Pods-Pipe Dream.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,9 +112,10 @@
 		653F237C1B0682D4002774F1 /* Pipe DreamTests */ = {
 			isa = PBXGroup;
 			children = (
-				653F237D1B0682D4002774F1 /* Supporting Files */,
-				653F238A1B0683AF002774F1 /* PipeSpecs.swift */,
 				653F23891B0683AE002774F1 /* Pipe DreamTests-Bridging-Header.h */,
+				653F238A1B0683AF002774F1 /* PipeSpecs.swift */,
+				656ADE9B1B263E20004CCE3A /* PipeTests.swift */,
+				653F237D1B0682D4002774F1 /* Supporting Files */,
 			);
 			path = "Pipe DreamTests";
 			sourceTree = "<group>";
@@ -196,6 +198,7 @@
 		653F235C1B0682D4002774F1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Dan Thorpe";
 				TargetAttributes = {
@@ -354,7 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				653F238B1B0683AF002774F1 /* PipeSpecs.swift in Sources */,
+				656ADE9C1B263E20004CCE3A /* PipeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
